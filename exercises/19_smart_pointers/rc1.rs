@@ -10,8 +10,11 @@
 //
 // Execute `rustlings hint rc1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
+///Pour les premieres lignes, on continue de clone la &str sun pour créer une référence comptée de Sun ,
+/// sans clone chaque planète créerait une copie distincte du soleil.
+///Ensuite pour décrémenter le compteur, on utilise drop.
+/// On voit que le compteur à la fin doit atteindre les 1 et qu'il manque la Terre, Venus et Mercure, donc on refait
+/// les meme lignes drop avec ces planètes.
 use std::rc::Rc;
 
 #[derive(Debug)]

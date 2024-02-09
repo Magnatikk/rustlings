@@ -10,11 +10,13 @@
 // Execute `rustlings hint using_as` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+/// Cet exercice a pour but de nous faire untiliser le keyword "as"
+/// "as" nous permet de caster un type vers un autre
+/// Dans ce cas, vu que la fonction "average" est censée retourner un f64
+/// Il nous suffit de caster la valeur de retour (total / values.len()) en tant que f64
 fn average(values: &[f64]) -> f64 {
     let total = values.iter().sum::<f64>();
-    total / values.len()
+    total / values.len() as f64
 }
 
 fn main() {
