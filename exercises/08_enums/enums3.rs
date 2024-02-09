@@ -5,10 +5,18 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+///Le but de cet exercice est de compléter l'enum Message à la manière des exercices précédent
+/// Ainsi que de compléter la fonction permettant de process ces messages
+/// Pour les enums, il nous suffit de lire les paramètres attendus en entrée des différentes fonctions
+/// La fonction process attend que l'on utilise les 4 autres fonctions plus hautes
+/// On a juste a créer un match message {} afin de traiter chaque message.
+/// Egalement un test a corriger, car passer un tuple en paramètre requiere une paire de parenthèses en plus :
+/// state.process(Message::ChangeColor(255, 0, 255)); devient state.process(Message::ChangeColor((255, 0, 255)));
 enum Message {
-    // TODO: implement the message variant types based on their usage below
+    ChangeColor((u8,u8,u8)),
+    Echo(String),
+    Move(Point),
+    Quit
 }
 
 struct Point {
@@ -41,9 +49,12 @@ impl State {
     }
 
     fn process(&mut self, message: Message) {
-        // TODO: create a match expression to process the different message variants
-        // Remember: When passing a tuple as a function argument, you'll need extra parentheses:
-        // fn function((t, u, p, l, e))
+        match message {
+            Message::Quit=>self.quit(),
+            Message::ChangeColor((x,y,z))=>self.change_color((x,y,z)),
+            Message::Move(x)=>self.move_position(x),
+            Message::Echo(x)=>self.echo(x)
+        }
     }
 }
 
@@ -59,7 +70,7 @@ mod tests {
             color: (0, 0, 0),
             message: "hello world".to_string(),
         };
-        state.process(Message::ChangeColor(255, 0, 255));
+        state.process(Message::ChangeColor((255, 0, 255)));
         state.process(Message::Echo(String::from("Hello world!")));
         state.process(Message::Move(Point { x: 10, y: 15 }));
         state.process(Message::Quit);

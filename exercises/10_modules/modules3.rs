@@ -8,8 +8,8 @@
 // Execute `rustlings hint modules3` or use the `hint` watch subcommand for a
 // hint.
 
-
-// TODO: Complete this use statement
+///Le but de cet exercice est simplement d'impporter UNIX_EPOCH et SystemTime depuis la librairie standard de Rust
+/// Avec l'utilisation de "use"
 use std::time::{SystemTime,UNIX_EPOCH};
 
 fn main() {

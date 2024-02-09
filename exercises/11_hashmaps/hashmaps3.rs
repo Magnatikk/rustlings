@@ -14,12 +14,18 @@
 // Execute `rustlings hint hashmaps3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+///Le but de cet exercice est de construire un tableau des scores avec le nom de l'équipe, leurs buts marqués et concédés
+///Pour cela, on rajoute le nom de l'équipe dans la structure Team
+///Pour la fonction, on boucle d'abord sur les tuples des Team
+/// Ensuite, on vérifie que l'équipe existe dans scores avec scores.entry(team_name.clone()) et si elle n'existe pas,
+/// on l'instancie avec 0 buts marqués et concédés avec .or_insert_with()
+/// On met ensuite les champs goals_scored et goals_conceded à jour
+///
 use std::collections::HashMap;
 
 // A structure to store the goal details of a team.
 struct Team {
+    name: String,
     goals_scored: u8,
     goals_conceded: u8,
 }
@@ -39,6 +45,16 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // will be the number of goals conceded by team_2, and similarly
         // goals scored by team_2 will be the number of goals conceded by
         // team_1.
+        for team_score in &[(team_1_name, team_1_score, team_2_score), (team_2_name, team_2_score, team_1_score)] {
+            let (team_name, goals_scored, goals_conceded) = team_score;
+            let team = scores.entry(team_name.clone()).or_insert_with(|| Team {
+                name: team_name.clone(),
+                goals_scored: 0,
+                goals_conceded: 0,
+            });
+            team.goals_scored += goals_scored;
+            team.goals_conceded += goals_conceded;
+        }
     }
     scores
 }

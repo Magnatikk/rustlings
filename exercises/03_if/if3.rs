@@ -2,17 +2,18 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
+///Ici, le but de l'exercice était de réparer la déclaration de la variable "identifier"
+/// Dans ce cas, tout les choix de valeurs possibles doivent avoir le même type, la solution la plus simple ici
+/// est de remplacer le "2.0" de la ligne 12 en "2"
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        0
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW

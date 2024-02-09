@@ -6,8 +6,8 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+///Pour cet exercice, il nous suffisait juste d'implementer le type générique <T> afin de pouvoir supporter n'importe quel type
+/// Donc changer les u32 en T et rajouter <T> sur la déclaration de la struct Wrapper et son implémentation
 struct Wrapper<T> {
     value: T,
 }

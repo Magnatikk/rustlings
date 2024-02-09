@@ -6,13 +6,13 @@
 // Execute `rustlings hint primitive_types6` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
+///L'objectif de cet exercice est simplement de récuperer la valeur en deuxième position dans le tuple "numbers"
+/// Pour cela, la solution la plus simple consiste à utiliser le ".1" pour aller récupérer la valeur en 2eme position
 
 #[test]
 fn indexing_tuple() {
     let numbers = (1, 2, 3);
-    // Replace below ??? with the tuple indexing syntax.
-    let second = ???;
+    let second = numbers.1;
 
     assert_eq!(2, second,
         "This is not the 2nd number in the tuple!")

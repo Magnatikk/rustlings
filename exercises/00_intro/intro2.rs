@@ -5,8 +5,7 @@
 // Execute `rustlings hint intro2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+/// Changer l'output du println! n'est pas une tache très complexe
 fn main() {
-    printline!("Hello there!")
+    println!("Hello World!")
 }

@@ -7,24 +7,27 @@
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+///Pour le 1er exercice de ce fichier, on nous demande simplement de multiplier "element" par 2 dans un vecteur mutable
+/// Il nous suffit donc de faire un "*=" par 2 sur la référence de "element" dans la loop de v.iter_mut
 
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
-        // TODO: Fill this up so that each element in the Vec `v` is
-        // multiplied by 2.
-        ???
+        *element *= 2;
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
     v
 }
 
+///Pour le 2eme exercice, on nous demande de faire la meme chose, cette fois ci sur un vecteur non mutable.
+/// Pour ce faire, un iterateur est créé sur "v" avec "iter()", map() itère sur "iter()" et appelle la fonction présente
+/// à l'intèrieur d'elle sur chaque élément de l'itérateur.
+///".collect()" permet enfin de transformer l'itérateur en collection (en Vec dans ce cas là)
+///La solution est donc tout simplement de faire element*2 !
+
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter().map(|element| {
-        // TODO: Do the same thing as above - but instead of mutating the
-        // Vec, you can just return the new number!
-        ???
+        element*2
     }).collect()
 }
 

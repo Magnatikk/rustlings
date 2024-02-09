@@ -9,8 +9,12 @@
 // Execute `rustlings hint errors6` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+///Dans cet exercice, il nous était demandé de créer une fonction de conversion d'erreur from_parseint
+/// En partant de l'enum de ParsePosNonzeroError, on a complété la fonction avec l'erreur ParseIntError
+///
+/// Pour la complétion de la fonction parse_pos_nonzero, j'ai utilisé le "?", qui permet soit d'unwrap si la valeur est
+/// bonne, soit de remonter une erreur si elle ne l'est pas, couplé avec map_err(ParsePosNonzeroError::from_parseint)
+/// que l'on a codé plus tot
 use std::num::ParseIntError;
 
 // This is a custom error type that we will be using in `parse_pos_nonzero()`.
